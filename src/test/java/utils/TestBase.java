@@ -2,6 +2,7 @@ package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -30,7 +31,7 @@ public class TestBase {
 			{
 				driver = new FirefoxDriver();
 			}
-
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 			driver.get(url);
 
 		}

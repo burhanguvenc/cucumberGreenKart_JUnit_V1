@@ -38,10 +38,11 @@ public class LandingPageStepDefinition {
 		System.out.println(landingPageProductName + " is extracted from Home Page");
 	}
 	
-	@When("^And added (.+) items of the selected product to cart$")
+	@When("added {string} items of the selected product to cart")
 	public void added_items_product(String quantity)
 	{
-		
+		landingPage.incrementQuantity(Integer.parseInt(quantity));
+		landingPage.addToCart();
 	}
 	
 }

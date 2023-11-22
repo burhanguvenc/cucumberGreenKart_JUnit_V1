@@ -20,15 +20,16 @@ public class CheckoutPageStepDefinition {
 		this.checkoutPage = testContextSetup.pageObjectManager.getCheckoutPage();
 	}
 
-	@Then("And verify user has ability to enter promo code and place the order")
+	@Then("verify user has ability to enter promo code and place the order")
 	public void verify_user_has_ability_to_enter_promo() {
 
 		Assert.assertTrue(checkoutPage.VerifyPromoBtn());
 		Assert.assertTrue(checkoutPage.VerifyPlaceOrder());
 	}
 
-	@Then("^Then User proceeds to Checkout and validate the (.+) items in checkout page$")
-	public void user_proceeds_to_checkout(String name) {
+	@Then("^User proceeds to Checkout and validate the (.+) items in checkout page$")
+	public void user_proceeds_to_checkout(String name) throws InterruptedException {
 		checkoutPage.CheckoutItems();
+		
 	}
 }
