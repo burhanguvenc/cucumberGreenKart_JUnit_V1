@@ -21,17 +21,22 @@ public class TestBase {
 		prop.load(fis);
 
 		String url = prop.getProperty("QAUrl");
-		String browsertest = prop.getProperty("browser");
+		String browser_properties = prop.getProperty("browser");
+		String browser_maven = System.getProperty("browser");
+
+		// result = testCondition ? value1 : value2
+
+		String browser = browser_maven != null ? browser_maven : browser_properties;
 
 		if (driver == null) {
-			if (browsertest.equalsIgnoreCase("chrome")) 
-			{
+			if (browser.equalsIgnoreCase("chrome")) {
 				driver = new ChromeDriver();
-			} else if (browsertest.equalsIgnoreCase("firefox")) 
-			{
+			}
+			if (browser.equalsIgnoreCase("firefox")) {
 				driver = new FirefoxDriver();
 			}
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.manage().window().maximize();
 			driver.get(url);
 
 		}
