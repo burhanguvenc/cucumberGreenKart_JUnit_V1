@@ -2,8 +2,8 @@ package stepDefinitions;
 
 import java.io.IOException;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;

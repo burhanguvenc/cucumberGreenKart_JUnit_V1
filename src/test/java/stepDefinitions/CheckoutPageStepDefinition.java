@@ -1,7 +1,7 @@
 package stepDefinitions;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
 import pageObjects.CheckoutPage;
